@@ -1,0 +1,39 @@
+title = "TOML in file a"
+
+[base]
+public_IP= 10
+
+[cameras.camera1]
+name = "磅房摄像头"
+addr = 0
+func = "卡车出入数量统计"
+algo = "PersonOffOn"
+port = 7011
+
+# [cameras.camera2]
+# name = "水库摄像头"
+# addr = "rtsp://admin:wlt12345@178.68.10.154:554/Streaming/Channels/102"
+# func = "水库水位监测"
+# algo = "ReservoirLevelDetect"
+# port = 7011
+
+# [cameras.camera3]
+# name = "分控中心摄像头"
+# addr = "rtsp://admin:wlt12345@178.68.11.113:554/h265/ch1/sub/av_stream"
+# func = "人员离岗检测"
+# algo = "PersonOffOn"
+# port = 7011
+
+# [cameras.camera4]
+# name = "变电站摄像头"
+# addr = "rtsp://admin:wlt12345@178.68.11.83:554/h265/ch1/sub/av_stream"
+# func = "人员离岗检测"
+# algo = "PersonClose"
+# port = 7011
+#
+# [cameras.camera5]
+# name = "刮板机摄像头"
+# addr = "rtsp://admin:wlt12345@178.68.11.88:554/h265/ch1/sub/av_stream"
+# func = "刮板机输煤检测"
+# algo = "Scraper"
+# port = 7011

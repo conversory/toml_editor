@@ -10,24 +10,28 @@ import toml
 
 sg.theme('GreenTan')
 
+
 # test = toml.load("config1.toml")
 # with open("config2.toml", 'w', encoding='utf-8') as f:
 #     r = toml.dump(test, f)
 
 
 class window_show:
-    def __init__(self, list):
+    def __init__(self, list1):
+        self.list1 = []
+        for i in list1:
+            self.list1.append(i)
+        print(self.list1)
         self.window = self.generate_window_main()
-        self.list = list
         pass
 
     def generate_window_main(self):
-        a = Text('sdjfkalsjdfkla')
-        a = sg.Listbox(self.list)
-        col1 = Column([[sg.Button('刷新')],
-                       [sg.Button('增加')],
-                       [sg.Button('修改')],
-                       [sg.Button('删除')]])
+        a = sg.Listbox(self.list1, size=(20, 12), key='-LIST', enable_events=True)
+
+        col1 = Column([[sg.Button('刷新', font=('宋体', 18))],
+                       [sg.Button('增加', font=('宋体', 18))],
+                       [sg.Button('修改', font=('宋体', 18))],
+                       [sg.Button('删除', font=('宋体', 18))]])
 
         layout = [[col1, a]]
         return Window('配置文件修改', layout)
@@ -43,8 +47,20 @@ class window_show:
                 aa.run()
         self.window.close()
 
+    def refresh(self):
+        pass
+
+    def add(self):
+        pass
+
+    def delete(self):
+        pass
+
+    def change(self):
+        pass
+
 
 if __name__ == '__main__':
-    test = toml.load("config1.toml")
+    test = toml.load("config.toml")
     window1 = window_show(test)
     window1.run()
